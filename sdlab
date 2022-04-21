@@ -1,0 +1,12 @@
+echo, read
+man
+cd, mkdir, pwd, ls, find
+cat, mv, cp, rm
+
+wc, cut, paste
+more, less
+chmod, chown
+
+head, tail, grep, expr
+Redirections & Piping
+useradd, usermod, userdel, passwd

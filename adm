@@ -1,0 +1,57 @@
+Configuring Git
+When you come to a bank for the first time and ask to store your money there, they give you a bunch of paperwork to fill out. Before you can use banking services, you have to register with the bank. Git wants you to do the same (register with Git) before you start using a repository.
+
+To tell Git who you are, run the following two commands:
+
+$ git config --global user.name "King Kong"
+$ git config --global user.email "king-kong@gmail.com"
+view rawname-and-email-git-configurations.sh hosted with ❤ by GitHub
+You've completed the first configurations! (Hopefully you've registered your real name and email. If not, you can easily change them by running the same commands once more, but using your real name and email this time.)
+
+Let's quickly review the syntax of Git commands. You first need to type "git", followed by a command – "config" in our example – and pass an option, which is "--global" in the code above. The option "--global" means that you set your username and email for Git globally on your computer. No matter how many projects with separate local repositories you create, Git will use the same username and email to mark your commits.
+
+There's one thing to configure before you start using Git. Since you'll see the output from many Git commands in the terminal, it's best to have some pretty colors for the output. To turn on code highlighting, just run the following command:
+
+$ git config --global color.ui true
+view rawgit-syntax-highlighting.sh hosted with ❤ by GitHub
+Again, this configuration will be applied globally and it tells Git to highlight words in the terminal output to improve readability.
+
+The last basic configuration command will let you view your Git configurations. Running this command is the same as asking for a copy of your contract:
+
+$ git config --list
+user.name=King Kong
+user.email=king-kong@gmail.com
+view rawgit-configurations-list.sh hosted with ❤ by GitHub
+That's enough for a start. You've got the feeling of Git by running several simple configuration commands. But you haven't actually used Git yet. Let's try some real Git, so to speak.
+
+We'll finish each section with a Git commands list. Here are the basic Git commands you've learned so far:
+
+Git cheatsheet - basic Git commands for configuring Git
+Starting a New Local Repository with Git
+To continue with our bank metaphor, we need to explicitly ask the bank to open a new safe deposit box to store our effects (read: code). Assuming you've already created an empty directory for your project, you need to explicitly ask Git to create a safe deposit box – a repository – in that directory:
+
+$ git init
+Initialized empty Git repository in /home/dell/new-folder/.git/
+view rawcreate-new-repository-with-git.sh hosted with ❤ by GitHub
+The "init" command stands for initialize. Once you run "git init", Git will initialize a hidden directory called ".git" in the project's root directory. And you'll get a confirmation that your deposit box is ready! What's next? You might want to know the status of your box: does it store anything yet? To know the Git status, you'll need to run:
+
+$ git status
+view rawgit-status-command.sh hosted with ❤ by GitHub
+You'll run the command "git status" quite often. It's the same as calling a bank administrator to check if your things arrived or if anything has been moved to a different vault.
+
+For now, Git will give you the following output:
+
+$ git status
+On branch master
+Initial commit
+nothing to commit (create/copy files and use "git add" to track)
+view rawgit-status-with-output.sh hosted with ❤ by GitHub
+The message above presents a few new terms, so let's clarify what they mean.
+
+Git Branches
+You can consider branches in Git as paths. Imagine that you explore a new territory and you mark the main path to water with poles each 10 to 15 meters. This main path is like the master branch, and the poles are like commits. We'll talk more about branches in the last section of the article. For now, it's sufficient to know that Git has a base branch called the master branch.
+
+Git Commits
+A commit to a repository is a snapshot of the current state of the project's root directory. Since this explanation doesn't really tell anything, we need to delineate the underlying concept.
+
+Let's say you're working with a bunch of papers. You've written ten texts about animals on separate sheets of paper and you want to note what texts they are and when you wrote them. You take out another sheet of paper, call it a "commit," and write on this commit paper: "I've written text #1. It's about birds. I've written text #2. It's about dogs..." Then you create a copy of each text. The last thing you do is you gather those ten copies, pin the commit paper on top of them, and lay them in a drawer.
